@@ -4,3 +4,7 @@ function getCardPrice(textId) {
     const price = parseFloat(cardPriceString);
     return price;
 }
+
+function couponCode(){
+ 
+}
