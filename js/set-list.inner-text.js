@@ -11,59 +11,59 @@ function setText(target) {
     total = (parseFloat(total) + parseFloat(itemPrice));
     document.getElementById('total-price').innerText = total.toFixed(2);
 
-
-    // enable purchase button
     const purchase = document.getElementById('purchase');
 
     if (total >= 200) {
         purchase.removeAttribute('disabled')
 
     }
-
+    else
+        purchase.setAttribute('disabled', true)
 
 
 }
+
+
+
+
 // enabling coupon code button
+const apply = document.getElementById('apply')
 
 function inputValue(target) {
     const inputField = target.parentNode.childNodes[1].value;
-    const apply = document.getElementById('apply')
 
     if (inputField == "SELL200" && total >= 200) {
         apply.removeAttribute('disabled')
     }
     else
         apply.setAttribute('disabled', true)
+    return;
 }
 
 // Counting discount
 function calculateDiscount() {
     const discount = (20 / 100) * total;
-    document.getElementById('discount').innerText = discount;
+    document.getElementById('discount').innerText = discount.toFixed(2);
     const netTotal = total - discount;
-    document.getElementById('total').innerText = netTotal;
+    document.getElementById('total').innerText = netTotal.toFixed(2);
 }
-// purchase completion and set new value;
-// function purchaseCompletion() {
-//     document.getElementById('total-price').innerText = 0.00;
-//     document.getElementById('discount').innerText = 0.00;
-//     document.getElementById('total').innerText = 0.00;
-//     document.getElementById('items-names').innerText = "";
 
 
-
-
-// }
-
-
-    function purchaseCompletion() {
-      document.getElementById('total-price').innerText = '0.00';
-      document.getElementById('discount').innerText = '0.00';
-      document.getElementById('total').innerText = '0.00';
-      const parentElement = document.getElementById('item-names')
-      while(parentElement.firstChild){
+function purchaseCompletion() {
+    
+    total=0;
+    discount=0;
+    newTotal=0;
+    document.getElementById('total-price').innerText = 0.00;
+    document.getElementById('discount').innerText = 0.00;
+    document.getElementById('total').innerText = 0.00;
+    document.getElementById('coupon').value = "";
+    const parentElement = document.getElementById('item-names')
+    while (parentElement.firstChild) {
         parentElement.removeChild(parentElement.firstChild);
     }
-      }
-    
-  
+    apply.setAttribute('disabled', true)
+    purchase.setAttribute('disabled', true)
+    console.log(total)
+}
+
