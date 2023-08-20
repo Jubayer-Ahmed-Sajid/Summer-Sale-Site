@@ -13,7 +13,7 @@ function setText(target) {
 
     const purchase = document.getElementById('purchase');
 
-    if (total >= 200) {
+    if (total > 0) {
         purchase.removeAttribute('disabled')
 
     }
