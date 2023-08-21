@@ -13,7 +13,8 @@
                 extend: {
                     colors: {
                         primary: '#E527B2',
-                        secondary: '#11111180'
+                        secondary: '#11111180',
+                        customMagentaLight: 'lighten(#E527B2, 20%)'
                     }
                 }
             }
@@ -35,7 +36,7 @@
                         <div class="flex flex-row gap-4 mt-20 justify-center  items-center">
                             <p class="text-2xl">Use promo Code</p>
                             <button
-                                class="btn-secondary bg-primary  py-4 px-6 rounded-lg border-none text-white text-2xl">SELL200</button>
+                                class="btn-secondary bg-primary  py-4 px-6 rounded-lg border-none text-white text-2xl hover:bg-pink-700">SELL200</button>
                         </div>
                     </div>
                 </div>
@@ -289,25 +290,27 @@
 
 
                 </div>
+
+                <!-- Cart Section -->
                 <!-- Coupon code section -->
                 <div>
-                    <div class="p-6 shadow-lg mb-8 mt-12">
+                    <div class="p-6 shadow-lg mb-20 mt-12">
                         <h3 class="text-2xl mb-4">Have coupon?</h3>
                         <div>
                             <input onkeyup="inputValue(this)" type="text" name="" id="coupon" placeholder="Coupon Code"
                                 class="py-4">
                             <button onclick="calculateDiscount(this)" id="apply"
-                                class="btn rounded-md bg-primary text-xl text-white px-6" disabled>Apply</button>
+                                class="btn rounded-md bg-primary text-xl text-white px-6 hover:bg-pink-700" disabled>Apply</button>
                         </div>
                     </div>
                     <!-- adding item section -->
-                    <div class="mb-5 shadow-lg">
-                        <ol class="list-decimal text-2xl" id="item-names">
+                    <div class="mb-10 py-6 shadow-lg">
+                        <ol class="list-decimal text-2xl font-semibold text-left px-12" id="item-names">
 
                         </ol>
                     </div>
                     <!-- calculation section -->
-                    <div class="mb-5 shadow-lg">
+                    <div class="mb-5 shadow-lg py-6 text-left px-12">
                         <h4 class="text-2xl">Total Price: <span class="text-secondary" id="total-price">0</span></h4>
                         <h4 class="text-2xl">Discount: <span id="discount" class="text-secondary" id="discount">0</span>
                         </h4>
@@ -316,16 +319,17 @@
                     </div>
                     <div>
                         <label for="my_modal_6" onclick="purchaseCompletion(this)" id="purchase"
-                            class="btn bg-primary w-full text-white px-6 text-xl" disabled>Make
+                            class="btn bg-primary w-full text-white px-6 text-xl hover:bg-pink-700" disabled>Make
                             purchase</label>
                         <input type="checkbox" id="my_modal_6" class="modal-toggle" />
                         <div class="modal">
                             <div class="modal-box">
-                                    <img src="./images/congo.png" alt="" class="w-40 h-40 mb-10 mx-32 mt-12">
+                                <img src="./images/congo.png" alt="" class="w-40 h-40 mb-10 mx-32 mt-12">
                                 <h2 class="py-4 text-5xl font-bold text-center">congratulations</h2>
                                 <p class="text-secondary text-center text-xl">Your Purchase the product</p>
                                 <div class="modal-action mx-40">
-                                    <label onclick="purchaseCompletion(this)" id="reset" for="my_modal_6" class="btn bg-primary text-xl text-white px-6 mb-24">Go
+                                    <label onclick="purchaseCompletion(this)" id="reset" for="my_modal_6"
+                                        class="btn bg-primary text-xl text-white px-6 mb-24 hover:bg-pink-700">Go
                                         Home</label>
                                 </div>
                             </div>
@@ -335,6 +339,7 @@
             </div>
         </section>
     </main>
+
     <script src="js/script.js"></script>
 
 </body>

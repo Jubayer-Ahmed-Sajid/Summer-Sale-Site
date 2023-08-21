@@ -10,6 +10,7 @@ function setText(target) {
     const itemPrice = target.childNodes[3].childNodes[5].innerText.split(" ")[0];
     total = (parseFloat(total) + parseFloat(itemPrice));
     document.getElementById('total-price').innerText = total.toFixed(2);
+    document.getElementById('total').innerText = total.toFixed(2);
 
     const purchase = document.getElementById('purchase');
 
